@@ -1,0 +1,2 @@
+A quoi sert l’option -keep?
+  => Conserver les fichiers générés

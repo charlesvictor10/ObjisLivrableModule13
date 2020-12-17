@@ -1,0 +1,9 @@
+Expliquez le contenu du projet:
+  => Nous avon une classe Player avec ses attributs, une classe Team qui liste les players, une classe
+  Teams qui est un WebService avec des méthodes getTeam() et getTeams() et qui fait appel à une classe
+  TeamsUtility ou sont implémentées le méthodes et une classe TeamsPublisher qui permet de publier le 
+  Web Service.
+
+Analysez le code de la classe Teams:
+  => Nous avon une classe annotatée avec @WebService pour montrer que nous avons un WebService et des 
+  méthodes annotées avec @WebMethod.

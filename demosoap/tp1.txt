@@ -1,0 +1,46 @@
+citez 3 inconvénients de l'approche bottom-up de développement de service web
+  => Ne respect pas la neutralité du langage
+  => Elle bloque le pilotage de la SOA par les besoins métiers
+  => Les services émergeants de cette approche restent très fortement couplés à leur application
+  d'origine
+
+Expliquez l'annotation @WebService
+  => L'annotation @WebService marque une classe Java comme implémentant un service web ou marque une 
+  interface SEI(Service Endpoint Interface) comme implémentant une interface de service web.
+
+A quoi sert l'annotation @SoapBinding?
+  => L'annotation @SoapBinding indique le mappage du service web vers le protocole de message SOAP.
+
+Qu’est ce que le style RPC? Existe t’il d’autres ‘Style’? Lesquels? Quelles différences avec RPC?
+  => Style RPC permet l'invocation d'opérations qui peuvent retourner un résultat
+  => D'autres style: RPC/Encoded, RPC/Literal, Document Encoded, Document/Literal, Wrapped,
+  Document/Literal
+  => Différences avec RPC
+    => L’ avantage d’utiliser un modèle de style Document est que vous pouvez structurer le corps 
+    SOAP comme vous le souhaitez, à condition que le contenu du corps du message SOAP soit une 
+    instance XML arbitraire. Le style de document est également appelé style orienté message.
+    Cependant, avec un modèle de style RPC , la structure du corps de requête SOAP doit contenir à la fois le nom de l’opération et l’ensemble des parameters de la méthode. Le modèle de style RPC suppose une structure spécifique à l’ instance XML contenue dans le corps du message.
+    En outre, il existe deux modèles d’utilisation du codage utilisés pour traduire une liaison WSDL 
+    en un message SOAP. Ils sont: littéraux et codés.
+    Lors de l’utilisation d’un modèle d’utilisation littéral , le contenu du corps doit être conforme
+    à une structure de schéma XML (XSD) définie par l’utilisateur. L’avantage est double. D’une part,
+    vous pouvez valider le corps du message avec le schéma XML défini par l’utilisateur. De plus, 
+    vous pouvez également transformer le message en utilisant un langage de transformation 
+    tel que XSLT.
+    Avec un modèle d’utilisation codé (SOAP), le message doit utiliser des types de données XSD,
+    mais la structure du message ne doit pas nécessairement être conforme à un schéma XML défini 
+    par l’utilisateur. Cela rend difficile la validation du corps du message ou l’utilisation de 
+    transformations basées sur XSLT sur le corps du message.
+    La combinaison des différents modèles de style et d’utilisation nous donne quatre manières 
+    différentes de traduire une liaison WSDL en un message SOAP.
+    Document/literal Document/encoded RPC/literal RPC/encoded 
+
+Expliquez les principales sections du WSDL:
+  => Types: types de données utilisés par le Web Service
+  => Message: la définition de la structure d'un message en lui attribuant un nom et en décrivant les éléments
+  qui le composent avec un nom et un type 
+  => Port-type: la description de toutes les opérations proposées par le service web (interface du service) 
+  et identification de cet ensemble avec un nom
+  => Bindings: la description du protocole de transport et d'encodage utilisé par un PortType afin de pouvoir
+  invoquer un service web
+  => Service: c'est un ensemble de ports

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+	<handler-name>com.objis.tpwebservice.intercepteur.SoapMessageHandler</handler-name>
+	<handler-class>com.objis.tpwebservice.intercepteur.SoapMessageHandler</handler-class>
+</handler-chains>

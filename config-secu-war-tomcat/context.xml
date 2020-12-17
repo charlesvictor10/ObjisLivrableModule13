@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resource name="jdbc/EmployeeDB" auth="Container" type="javax.sql.DataSource"
+	maxActive="100" maxIdle="30" username="root" password="" driverClassName="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost/formation?autoReconnect=true"  />
+
+<Realm className="org.apache.catalina.realm.DataSourceRealm"
+	dataSourceName="jdbc/authority" localDataSource="true" userTable="users" userRoleTable="roles"  userNameCol="name"
+	userCredCol="password" roleNameCol="role" />
+
+</Context>

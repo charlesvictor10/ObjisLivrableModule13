@@ -1,0 +1,11 @@
+Dans quelle section du WSDL se trouve l’adresse d’accès au webservice?
+  <service name="HelloObjisWService">
+    <port name="HelloObjisWSPort" binding="tns:HelloObjisWSPortBinding">
+      <soap:address location="http://localhost:8081/hello"/>
+    </port>
+  </service>
+
+En déduire une faille liée à la gouvernance de ce service.
+
+En utilisant l’API Jax-WS, expliquez le point commun et différence entre l’interface
+LogicalHandler et l’interface SoapHandler

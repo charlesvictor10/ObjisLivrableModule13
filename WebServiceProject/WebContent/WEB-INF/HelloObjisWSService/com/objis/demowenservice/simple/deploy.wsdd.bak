@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from HelloObjisWSService WSDL service -->
+
+  <service name="HelloObjisWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://simple.demowenservice.objis.com"/>
+      <parameter name="wsdlServiceElement" value="HelloObjisWSService"/>
+      <parameter name="schemaQualified" value="http://simple.demowenservice.objis.com"/>
+      <parameter name="wsdlServicePort" value="HelloObjisWS"/>
+      <parameter name="className" value="com.objis.demowenservice.simple.HelloObjisWSSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="HelloObjisWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="ditBonjour" qname="operNS:ditBonjour" xmlns:operNS="http://simple.demowenservice.objis.com" returnQName="retNS:ditBonjourReturn" xmlns:retNS="http://simple.demowenservice.objis.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://simple.demowenservice.objis.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="ditBonjour"/>
+
+  </service>
+</deployment>
